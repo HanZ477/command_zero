@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Modules</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f2f2f2;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #4CAF50;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .container {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #4CAF50;
+    }
+    pre {
+  background-color: #272822;
+  color: #ffffff; /* Bright white for readability */
+  padding: 15px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.back-button {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .back-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>HTML Learning Modules</h1>
+  </header>
+
+  <div class="container">
+
+    <section>
+      <h2>1. Introduction to HTML</h2>
+      <p>HTML (HyperText Markup Language) is used to create the structure of web pages. It uses elements represented by tags.</p>
+      <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;My Page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Hello World&lt;/h1&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>2. Headings and Paragraphs</h2>
+      <p>Use heading tags <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> and <code>&lt;p&gt;</code> for paragraphs.</p>
+      <pre><code>&lt;h1&gt;Main Heading&lt;/h1&gt;
+&lt;p&gt;This is a paragraph.&lt;/p&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>3. Lists in HTML</h2>
+      <p>HTML supports ordered and unordered lists.</p>
+      <pre><code>&lt;ul&gt;
+  &lt;li&gt;Apple&lt;/li&gt;
+  &lt;li&gt;Banana&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;First&lt;/li&gt;
+  &lt;li&gt;Second&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>4. Links and Images</h2>
+      <p>Links are made with <code>&lt;a&gt;</code> and images with <code>&lt;img&gt;</code>.</p>
+      <pre><code>&lt;a href="https://example.com"&gt;Visit Example&lt;/a&gt;
+
+&lt;img src="image.jpg" alt="Sample Image"&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>5. Tables</h2>
+      <p>Tables organize data in rows and columns.</p>
+      <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;John&lt;/td&gt;
+    &lt;td&gt;25&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>6. Forms</h2>
+      <p>Forms collect user input.</p>
+      <pre><code>&lt;form action="/submit"&gt;
+  &lt;input type="text" name="name" placeholder="Your Name"&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>7. Semantic Tags</h2>
+      <p>Semantic tags describe the meaning of content, such as <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;nav&gt;</code>.</p>
+      <pre><code>&lt;nav&gt;
+  &lt;a href="#"&gt;Home&lt;/a&gt;
+  &lt;a href="#"&gt;Contact&lt;/a&gt;
+&lt;/nav&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>8. Inline vs Block Elements</h2>
+      <p>Block elements (like <code>&lt;div&gt;</code>) take full width. Inline elements (like <code>&lt;span&gt;</code>) don’t break lines.</p>
+    </section>
+
+    <section>
+      <h2>9. HTML Entities</h2>
+      <p>Entities are used for reserved characters: <code>&amp;lt;</code> = &lt;, <code>&amp;amp;</code> = &amp;</p>
+    </section>
+
+    <section>
+      <h2>10. Embedding Media</h2>
+      <p>You can add video and audio using the <code>&lt;video&gt;</code> and <code>&lt;audio&gt;</code> tags.</p>
+      <pre><code>&lt;video controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>11. HTML5 New Features</h2>
+      <p>HTML5 introduces new input types like date, email, and range.</p>
+      <pre><code>&lt;input type="email" placeholder="Enter email"&gt;
+&lt;input type="range" min="0" max="100"&gt;</code></pre>
+    </section>
+
+    <section>
+      <h2>12. Practice Exercise</h2>
+      <p>Try making your own HTML page with headings, a list, a link, an image, and a table.</p>
+    </section>
+</div>
+
+<a href="index.html" class="back-button">Go Back to Home</a>
+
+</body>
+</html>

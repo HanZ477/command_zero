@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Lessons</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: linear-gradient(to right, #dfe9f3, #ffffff);
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 30px;
+    }
+    #lesson-buttons {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    #lesson-buttons button {
+      margin: 8px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    #lesson-buttons button:hover {
+      background-color: #2980b9;
+    }
+    .lesson {
+      display: none;
+      background-color: #ffffff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .lesson h2 {
+      color: #2c3e50;
+    }
+    .lesson code {
+      background-color: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    pre {
+      background-color: #f4f4f4;
+      padding: 10px;
+      border-radius: 6px;
+      overflow-x: auto;
+    }
+    .quiz {
+      margin-top: 25px;
+      background-color: #ecf0f1;
+      padding: 15px;
+      border-radius: 8px;
+    }
+    .quiz p {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .quiz button {
+      display: block;
+      margin: 6px 0;
+      padding: 10px;
+      width: 100%;
+      background-color: #1abc9c;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .quiz button:hover {
+      background-color: #16a085;
+    }
+    .result {
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .back-button {
+      display: inline-block;
+      margin: 20px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .back-button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>HTML Learning Lessons</h1>
+
+  <div id="lesson-buttons">
+    <button onclick="showLesson(0)">Lesson 1</button>
+    <button onclick="showLesson(1)">Lesson 2</button>
+    <button onclick="showLesson(2)">Lesson 3</button>
+    <button onclick="showLesson(3)">Lesson 4</button>
+    <button onclick="showLesson(4)">Lesson 5</button>
+    <button onclick="showLesson(5)">Lesson 6</button>
+    <button onclick="showLesson(6)">Lesson 7</button>
+    <button onclick="showLesson(7)">Lesson 8</button>
+  </div>
+
+  <div id="lessons"></div>
+
+  <script>
+    const lessons = [
+      {
+        title: "Lesson 1: Introduction to HTML",
+        content: `
+          <p>HTML, or HyperText Markup Language, is the foundational language used to create and structure content on the web. It uses tags and elements to define the various parts of a webpage, such as headings, paragraphs, links, images, and more. HTML is not a programming language but a markup language, meaning it annotates content to tell the browser how to display it.</p>
+          <p>HTML documents are made up of elements, each enclosed within angle brackets. These elements often come in pairs: an opening tag and a closing tag. For example, <code>&lt;p&gt;This is a paragraph&lt;/p&gt;</code> creates a paragraph. Learning HTML is essential because it forms the skeleton of all web pages. Without HTML, websites wouldn't have structure or meaning.</p>
+          <p>This lesson introduces the basic structure of an HTML document, which includes the <code>&lt;!DOCTYPE html&gt;</code> declaration, the <code>&lt;html&gt;</code> element, a <code>&lt;head&gt;</code> section for metadata, and a <code>&lt;body&gt;</code> section for the content users see. Understanding these parts helps you build pages that are properly recognized and displayed by browsers.</p>
+        `,
+        quiz: {
+          question: "What does HTML stand for?",
+          options: [
+            { text: "HyperText Markup Language", correct: true },
+            { text: "Home Tool Markup Language", correct: false },
+            { text: "Hyperlink and Text Markup Language", correct: false }
+          ]
+        }
+      },
+      {
+        title: "Lesson 2: HTML Headings and Paragraphs",
+        content: `
+          <p>Headings in HTML help organize content into a hierarchy, making it easier for users to read and navigate your webpage. HTML offers six levels of headings, from <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code>, with <code>&lt;h1&gt;</code> being the most important and usually the title or main heading of the page.</p>
+          <p>Paragraphs, represented by the <code>&lt;p&gt;</code> tag, are used for blocks of text. Paragraphs add structure and readability to your web content. Proper use of headings and paragraphs enhances not just the visual layout but also accessibility and search engine optimization (SEO).</p>
+          <p>For example, a well-structured HTML document might start with an <code>&lt;h1&gt;</code> title, followed by several paragraphs describing the topic. Using headings appropriately can also help screen readers better interpret your page, making your content more inclusive. Always write semantic and meaningful headings to guide both users and search engines effectively.</p>
+        `,
+        quiz: {
+          question: "Which HTML tag is used for the largest heading?",
+          options: [
+            { text: "&lt;h1&gt;", correct: true },
+            { text: "&lt;h6&gt;", correct: false },
+            { text: "&lt;head&gt;", correct: false }
+          ]
+        }
+      },
+      {
+        title: "Lesson 3: HTML Lists",
+        content: `
+          <p>HTML provides three types of lists to organize content: unordered lists (<code>&lt;ul&gt;</code>), ordered lists (<code>&lt;ol&gt;</code>), and description lists (<code>&lt;dl&gt;</code>). Unordered lists display items with bullet points, while ordered lists use numbers. Description lists are used for terms and their descriptions.</p>
+          <p>Each list item is defined using the <code>&lt;li&gt;</code> tag. For example:</p>
+          <pre><code>&lt;ul&gt;
+  &lt;li&gt;Item 1&lt;/li&gt;
+  &lt;li&gt;Item 2&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+          <p>Lists are useful for presenting information in a clear, organized manner.</p>
+        `,
+        quiz: {
+          question: "Which HTML tag is used to define an unordered list?",
+          options: [
+            { text: "&lt;ul&gt;", correct: true },
+            { text: "&lt;ol&gt;", correct: false },
+            { text: "&lt;li&gt;", correct: false }
+          ]
+        }
+      },
+      {
+        title: "Lesson 4: HTML Links",
+        content: `
+          <p>HTML links, or hyperlinks, are created using the <code>&lt;a&gt;</code> tag. The <code>href</code> attribute specifies the destination URL. For example:</p>
+          <pre><code>&lt;a href="https://www.example.com"&gt;Visit Example&lt;/a&gt;</code></pre>
+          <p>Links can point to other web pages, files, email addresses, or locations within the same page. The <code>target</code> attribute can be used to specify where to open the linked document.</p>
+        `,
+        quiz: {
+          question: "Which attribute is used to specify the URL in an HTML link?",
+          options: [
+            { text: "href", correct: true },
+            { text: "src", correct: false },
+            { text: "link", correct: false }
+          ]
+        }
+      },
+      {
+        title: "Lesson 5: HTML Images",
+        content: `
+          <p>Images in HTML are embedded using the <code>&lt;img&gt;</code> tag. The <code>src</code> attribute specifies the path to the image, and the <code>alt</code> attribute provides alternative text if the image cannot be displayed. For example:</p>
+          <pre><code>&lt;img src="image.jpg" alt="Description of image"&gt;</code></pre>
+          <p>Images enhance the visual appeal of web pages and can convey information effectively.</p>
+        `,
+        quiz: {
+          question: "Which HTML tag is used to display an image?",
+          options: [
+            { text: "&lt;img&gt;", correct: true },
+            { text: "&lt;image&gt;", correct: false },
+            { text: "&lt;src&gt;", correct: false }
+          ]
+        }
+      },
+      {
+        title: "Lesson 6: HTML Tables",
+        content: `
+          <p>HTML tables are used to display data in rows and columns. A table is defined using the <code>&lt;table&gt;</code> tag, with rows defined by <code>&lt;tr&gt;</code>, header cells by <code>&lt;th&gt;</code>, and data cells by <code>&lt;td&gt;</code>. For example:</p>
+          <pre><code>&lt;table&gt;
+  &lt;tr&gt;
+    &lt;th&gt;Name&lt;/th&gt;
+    &lt;th&gt;Age&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alice&lt;/td&gt;
+    &lt;td&gt;30&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+          <p>Tables are useful for presenting structured data.</p>
+        `,
+        quiz: {
+          question: "Which HTML tag is used to define a table row?",
+          options: [
+            { text: "&lt;tr&gt;", correct: true },
+            { text: "&lt;td&gt;", correct: false },
+            { text: "&lt;th&gt;", correct: false }
+          ]
+        }
+      },
+      {
+        title: "Lesson 7: HTML Forms",
+        content: `
+          <p>HTML forms are used to collect user input. The <code>&lt;form&gt;</code> tag defines a form, and various input elements like <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, and <code>&lt;button&gt;</code> are used within it. For example:</p>
+          <pre><code>&lt;form action="/submit" method="post"&gt;
+  &lt;label for="name"&gt;Name:&lt;/label&gt;
+  &lt;input type="text" id="name" name="name"&gt;
+  &lt;input type="submit" value="Submit"&gt;
+&lt;/form&gt;</code></pre>
+          <p>Forms are essential for interactive web applications.</p>
+        `,
+        quiz: {
+          question: "Which HTML tag is used to create a form?",
+          options: [
+            { text: "&lt;form&gt;", correct: true },
+            { text: "&lt;input&gt;", correct: false },
+            { text: "&lt;textarea&gt;", correct: false }
+          ]
+        }
+      },
+      {
+        title: "Lesson 8: HTML Semantic Elements",
+        content: `
+          <p>Semantic HTML elements clearly describe their meaning in a human- and machine-readable way. Examples include <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;section&gt;</code>. These elements help structure the content meaningfully.</p>
+          <p>For example:</p>
+          <pre><code>&lt;article&gt;
+  &lt;h2&gt;Article Title&lt;/h2&gt;
+  &lt;p&gt;Article content goes here.&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+          <p>Using semantic elements improves accessibility and SEO.</p>
+        `,
+        quiz: {
+          question: "Which HTML tag is considered semantic?",
+          options: [
+            { text: "&lt;article&gt;", correct: true },
+            { text: "&lt;div&gt;", correct: false },
+            { text: "&lt;span&gt;", correct: false }
+          ]
+        }
+      }
+    ];
+
+    function showLesson(index) {
+      const lessonsContainer = document.getElementById("lessons");
+      lessonsContainer.innerHTML = "";
+
+      const lesson = document.createElement("div");
+      lesson.classList.add("lesson");
+
+      const title = document.createElement("h2");
+      title.innerHTML = lessons[index].title;
+
+      const content = document.createElement("div");
+      content.innerHTML = lessons[index].content;
+
+      const quiz = document.createElement("div");
+      quiz.classList.add("quiz");
+
+      const question = document.createElement("p");
+      question.innerHTML = lessons[index].quiz.question;
+      quiz.appendChild(question);
+
+      const result = document.createElement("div");
+      result.classList.add("result");
+
+      lessons[index].quiz.options.forEach(option => {
+        const btn = document.createElement("button");
+        btn.innerHTML = option.text;
+        btn.onclick = () => {
+          result.innerHTML = option.correct ? "✅ Correct!" : "❌ Wrong answer.";
+        };
+        quiz.appendChild(btn);
+      });
+
+      quiz.appendChild(result);
+      lesson.appendChild(title);
+      lesson.appendChild(content);
+      lesson.appendChild(quiz);
+      lessonsContainer.appendChild(lesson);
+
+      lesson.style.display = "block";
+    }
+  </script>
+
+<a href="index.html" class="back-button">Go Back to Home</a>
+
+</body>
+</html>
